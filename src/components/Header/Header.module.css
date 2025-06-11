@@ -1,0 +1,29 @@
+.container {
+  max-width: 1440px;
+  height: 68px;
+  padding-left: 120px;
+  padding-right: 120px;
+  margin: 0 auto;
+  background-color: #f2f4f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: #101828;
+  font-size: 26px;
+  text-decoration: none;
+}
+.nav {
+  display: flex;
+  gap: 32px;
+}
+.active {
+  color: #0b44cd;
+}

@@ -1,0 +1,40 @@
+.container {
+  width: 100%;
+  padding-top: 436px;
+  padding-bottom: 60px;
+  background-image: url(/images/PictureCar.jpg);
+}
+.titleContainer {
+  margin-bottom: 40px;
+}
+.title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+
+  color: #fff;
+  margin-bottom: 16px;
+}
+.text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: center;
+  color: #fff;
+}
+.button {
+  border-radius: 12px;
+  width: 276px;
+  height: 44px;
+  background: #3470ff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  border: none;
+}
+.button:hover,
+.button:focus {
+  background-color: #0b44cd;
+}

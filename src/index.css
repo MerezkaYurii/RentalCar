@@ -12,9 +12,13 @@ h6,
 p {
   margin: 0;
 }
-
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #fafafa;
+}
 ul,
 ol {
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
@@ -22,4 +26,7 @@ ol {
 img {
   display: block;
   max-width: 100%;
+}
+button {
+  cursor: pointer;
 }
