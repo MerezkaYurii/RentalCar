@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchCars } from '../../redux/carsOps';
+import { CarList } from '../../components/CarList/CarList';
+import { useDispatch } from 'react-redux';
+import s from "./Catalog.module.css"
 
 const Catalog = () => {
-  return <div>Catalog</div>;
+  const dispatch = useDispatch();
+  const [cars, setCars] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await dispatch(fetchCars()).unwrap();
+      setCars(data);
+    };
+    getData();
+  }, [dispatch]);
+
+  return (
+    <div className={s.container}>
+      <CarList />
+    </div>
+  );
 };
 
 export default Catalog;

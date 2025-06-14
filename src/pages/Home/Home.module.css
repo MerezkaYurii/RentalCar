@@ -3,6 +3,7 @@
   padding-top: 436px;
   padding-bottom: 60px;
   background-image: url(/images/PictureCar.jpg);
+  background-repeat: no-repeat;
 }
 .titleContainer {
   margin-bottom: 40px;
