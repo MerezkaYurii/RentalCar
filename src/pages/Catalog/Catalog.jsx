@@ -3,26 +3,31 @@ import { fetchCars } from '../../redux/carsOps';
 import { CarList } from '../../components/CarList/CarList';
 import { useDispatch } from 'react-redux';
 import s from './Catalog.module.css';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
 
 const Catalog = () => {
+  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   const [cars, setCars] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const data = await dispatch(fetchCars()).unwrap();
+      const data = await dispatch(fetchCars({ page })).unwrap();
       setCars(data);
     };
     getData();
-  }, [dispatch]);
+  }, [dispatch, page]);
 
   return (
     <>
-      {/* <div>
+      <div>
         <SearchBar />
-      </div> */}
+      </div>
       <div className={s.container}>
         <CarList />
       </div>
+      <button className={s.button} onClick={() => setPage(prev => prev + 1)}>
+        Load more
+      </button>
     </>
   );
 };
