@@ -1,6 +1,8 @@
 import React from 'react';
 import s from './CarItem.module.css';
+import { useNavigate } from 'react-router-dom';
 export const CarItem = ({
+  id,
   img,
   brand,
   year,
@@ -11,9 +13,14 @@ export const CarItem = ({
   type,
   mileage,
 }) => {
+  const navigate = useNavigate();
   const parts = address.split(', ');
   const result = parseInt(mileage * 1.61);
   const str = type.charAt(0).toUpperCase() + type.slice(1).toLowerCase();
+
+  const handleClick = () => {
+    navigate(`/catalog/${id}`);
+  };
   return (
     <div className={s.container}>
       <div className={s.infoCar}>
@@ -36,7 +43,10 @@ export const CarItem = ({
         </p>
       </div>
 
-      <button className={s.btn}> Read more</button>
+      <button className={s.btn} onClick={handleClick}>
+        {' '}
+        Read more
+      </button>
     </div>
   );
 };

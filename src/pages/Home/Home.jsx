@@ -1,7 +1,12 @@
 import React from 'react';
 import s from './Home.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/catalog');
+  };
   return (
     <div className={s.container}>
       <div className={s.titleContainer}>
@@ -10,7 +15,9 @@ export default function Home() {
           Reliable and budget-friendly rentals for any journey
         </h3>
       </div>
-      <button className={s.button}>View Catalog</button>
+      <button className={s.button} onClick={handleClick}>
+        View Catalog
+      </button>
     </div>
   );
 }

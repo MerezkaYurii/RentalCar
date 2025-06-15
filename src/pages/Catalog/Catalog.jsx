@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchCars } from '../../redux/carsOps';
 import { CarList } from '../../components/CarList/CarList';
 import { useDispatch } from 'react-redux';
-import s from "./Catalog.module.css"
+import s from './Catalog.module.css';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -16,9 +16,14 @@ const Catalog = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.container}>
-      <CarList />
-    </div>
+    <>
+      {/* <div>
+        <SearchBar />
+      </div> */}
+      <div className={s.container}>
+        <CarList />
+      </div>
+    </>
   );
 };
 

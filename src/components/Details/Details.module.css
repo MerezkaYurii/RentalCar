@@ -1,0 +1,82 @@
+.container {
+  width: 488px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carname {
+  text-align: left;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.id {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+  margin-left: 10px;
+}
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.text span {
+  margin-left: 10px;
+}
+.icon {
+  width: 12px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
+  margin-right: 5px;
+}
+.carprice {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #3470ff;
+  text-align: left;
+  margin-bottom: 32px;
+}
+.textdescription {
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  margin-bottom: 32px;
+}
+.rentalConditions {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.textrentalConditions {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.iconCheck {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
