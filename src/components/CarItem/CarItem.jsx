@@ -44,7 +44,6 @@ export const CarItem = ({
       </div>
 
       <button className={s.btn} onClick={handleClick}>
-        {' '}
         Read more
       </button>
     </div>

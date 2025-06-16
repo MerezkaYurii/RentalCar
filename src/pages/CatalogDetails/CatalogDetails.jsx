@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import s from './CatalogDetails.module.css';
 import { BookForm } from '../../components/BookForm/BookForm';
 import { Details } from '../../components/Details/Details';
-import ReactLoading from 'react-loading';
+import Loader from '../../components/Loader';
 
 const CatalogDetails = () => {
   const { id } = useParams();
@@ -20,7 +20,7 @@ const CatalogDetails = () => {
   }, [dispatch, id]);
 
   if (!car) {
-    return <ReactLoading type="spin" color="blue" height={50} width={50} />;
+    return <Loader />;
   }
 
   return (

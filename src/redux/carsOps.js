@@ -7,10 +7,25 @@ export const api = axios.create({
 
 export const fetchCars = createAsyncThunk(
   'cars/fetchData',
-  async ({ page }, thunkAPI) => {
+  async ({ page, filters = {} }, thunkAPI) => {
     try {
-      const { data } = await api.get(`/cars?page=${page}`);
-      return data.cars;
+      const queryParams = {
+        page,
+        brand: filters.brand || '',
+        rentalPrice: filters.rentalPrice || '',
+        from: filters.from || '',
+        to: filters.to || '',
+      };
+
+      const params = new URLSearchParams(queryParams).toString();
+      const { data } = await api.get(`/cars?${params}`);
+      console.log(data);
+      return {
+        cars: data.cars,
+        totalCars: data.totalCars,
+        totalPages: data.totalPages,
+        page: data.page,
+      };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
