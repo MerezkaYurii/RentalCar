@@ -10,6 +10,7 @@ const initialState = {
   page: 1,
   totalPages: 1,
   totalCars: 0,
+  favorites: JSON.parse(localStorage.getItem('favorites')) || [],
 };
 
 const slice = createSlice({
@@ -18,6 +19,20 @@ const slice = createSlice({
   reducers: {
     setFilters(state, action) {
       state.filters = action.payload;
+    },
+    addFavorite(state, action) {
+      const exists = state.favorites.find(car => car.id === action.payload.id);
+      if (!exists) {
+        state.favorites.push(action.payload);
+      }
+    },
+    removeFavorite(state, action) {
+      state.favorites = state.favorites.filter(
+        car => car.id !== action.payload
+      );
+    },
+    loadFavorites(state, action) {
+      state.favorites = action.payload;
     },
   },
   extraReducers: builder => {
@@ -47,4 +62,5 @@ const slice = createSlice({
 });
 
 export const carReduser = slice.reducer;
-export const { setFilters } = slice.actions;
+export const { setFilters, addFavorite, removeFavorite, loadFavorites } =
+  slice.actions;

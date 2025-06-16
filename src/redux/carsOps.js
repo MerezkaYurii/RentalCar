@@ -9,17 +9,15 @@ export const fetchCars = createAsyncThunk(
   'cars/fetchData',
   async ({ page, filters = {} }, thunkAPI) => {
     try {
-      const queryParams = {
-        page,
-        brand: filters.brand || '',
-        rentalPrice: filters.rentalPrice || '',
-        from: filters.from || '',
-        to: filters.to || '',
-      };
+      const queryParams = { page };
+
+      if (filters.brand) queryParams.brand = filters.brand;
+      if (filters.rentalPrice) queryParams.rentalPrice = filters.rentalPrice;
+      if (filters.from) queryParams.from = filters.from;
+      if (filters.to) queryParams.to = filters.to;
 
       const params = new URLSearchParams(queryParams).toString();
       const { data } = await api.get(`/cars?${params}`);
-      console.log(data);
       return {
         cars: data.cars,
         totalCars: data.totalCars,

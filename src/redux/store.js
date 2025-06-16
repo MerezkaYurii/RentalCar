@@ -6,3 +6,8 @@ export const store = configureStore({
     cars: carReduser,
   },
 });
+
+store.subscribe(() => {
+  const state = store.getState();
+  localStorage.setItem('favorites', JSON.stringify(state.cars.favorites));
+});

@@ -36,8 +36,15 @@ export const SearchBar = () => {
       from: values.from.replace(/\s/g, ''),
       to: values.to.replace(/\s/g, ''),
     };
-    dispatch(setFilters(cleanedValues));
-    dispatch(fetchCars({ page: 1, filters: cleanedValues }));
+    const singleFilter = {};
+    if (cleanedValues.brand) singleFilter.brand = cleanedValues.brand;
+    if (cleanedValues.rentalPrice)
+      singleFilter.rentalPrice = cleanedValues.rentalPrice;
+    if (cleanedValues.from) singleFilter.from = cleanedValues.from;
+    if (cleanedValues.to) singleFilter.to = cleanedValues.to;
+
+    dispatch(setFilters(singleFilter));
+    dispatch(fetchCars({ page: 1, filters: singleFilter }));
     actions.resetForm();
   };
 

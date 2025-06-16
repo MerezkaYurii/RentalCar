@@ -17,6 +17,7 @@
   background-color: gray;
   overflow: hidden;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .image img {
@@ -24,6 +25,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 .btn {
   align-self: flex-end;
   width: 100%;
@@ -47,7 +49,7 @@
 
 .titleContainer {
   display: flex;
-  justify-content: space-between; /* распределяет по краям */
+  justify-content: space-between;
   width: 100%;
 }
 
